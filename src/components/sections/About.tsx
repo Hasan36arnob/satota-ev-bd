@@ -7,18 +7,18 @@ import evMallImage from '@/assets/ev-charging-mall.jpg';
 const features = [
   {
     icon: Zap,
-    title: 'সারাদেশে চার্জিং নেটওয়ার্ক',
-    description: 'ঢাকা-চট্টগ্রাম মহাসড়ক, ঢাকা-সিলেট, ঢাকা-রাজশাহী - সব প্রধান হাইওয়েতে এবং শহরে আমাদের চার্জিং স্টেশন রয়েছে। যাত্রায় আর চিন্তা নেই!',
+    title: 'EV Charging Station Network',
+    description: 'Satota is working to create Bangladesh\'s first and largest EV charging network so that you never worry about the charging range within the city or highways.',
   },
   {
     icon: Building2,
-    title: 'বাড়ি ও অফিসে স্থাপন সেবা',
-    description: 'আপনার বাসা, অফিস, শপিং মল বা পার্কিংয়ে প্রফেশনাল ইভি চার্জার স্থাপন করি। বাজেট অনুযায়ী সেরা সমাধান দিচ্ছি।',
+    title: 'EV Charging Station Installation',
+    description: 'We supply a convenient, professional technical & field support team for EV charging station installation. Select the best pack of EV chargers according to your requirements and budget.',
   },
   {
     icon: Smartphone,
-    title: 'সাতোতা মোবাইল অ্যাপ',
-    description: 'অ্যাপের মাধ্যমে কাছের স্টেশন খুঁজুন, চার্জিং স্ট্যাটাস দেখুন, bKash/Nagad-এ পেমেন্ট করুন। বাংলায় সম্পূর্ণ সার্ভিস!',
+    title: 'Smart EV Charging App',
+    description: 'Our app helps you instantly locate the nearest electric vehicle charging station in Bangladesh. Access detailed, real-time information about each EV charging point.',
   },
 ];
 
@@ -42,12 +42,12 @@ export const About = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">আমাদের সম্পর্কে</span>
+          <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">About Us</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            সোনার বাংলায় <span className="text-gradient">সবুজ বিপ্লব</span>
+            EV Charging Stations in <span className="text-gradient">Bangladesh</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            সাতোতা বাংলাদেশের প্রথম ও বৃহত্তম ইভি চার্জিং কোম্পানি। আমরা বিশ্বাস করি দূষণমুক্ত বাংলাদেশ গড়তে ইলেকট্রিক গাড়ি হবে মূল চালিকাশক্তি।
+            Satota Electrical Vehicle Solution proudly stands as a pioneer in EV charging infrastructure in Bangladesh, committed to a sustainable future.
           </p>
         </motion.div>
 
@@ -75,8 +75,8 @@ export const About = () => {
                     <Zap className="w-7 h-7 text-primary-foreground" />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-foreground">২৪/৭</p>
-                    <p className="text-muted-foreground">সার্বক্ষণিক সেবা</p>
+                    <p className="text-2xl font-bold text-foreground">24/7</p>
+                    <p className="text-muted-foreground">Charging Available</p>
                   </div>
                 </div>
               </div>

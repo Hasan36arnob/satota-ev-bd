@@ -51,7 +51,7 @@ export const Footer = () => {
               </div>
             </a>
             <p className="text-muted-foreground mb-6 max-w-sm">
-              সাতোতা বাংলাদেশের বিশ্বস্ত ইভি চার্জিং পার্টনার। দ্রুত, নির্ভরযোগ্য এবং সাশ্রয়ী চার্জিং সেবা - bKash ও Nagad-এ পেমেন্ট সুবিধা।
+              Satota is your trusted partner for reliable EV charging stations in Bangladesh. We provide fast, reliable, and convenient charging solutions.
             </p>
             
             {/* Social Links */}
@@ -71,7 +71,7 @@ export const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">কোম্পানি</h3>
+            <h3 className="font-semibold text-foreground mb-4">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -88,7 +88,7 @@ export const Footer = () => {
 
           {/* Support Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">সাপোর্ট</h3>
+            <h3 className="font-semibold text-foreground mb-4">Support</h3>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
@@ -105,7 +105,7 @@ export const Footer = () => {
 
           {/* Solutions Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">সেবাসমূহ</h3>
+            <h3 className="font-semibold text-foreground mb-4">Solutions</h3>
             <ul className="space-y-3">
               {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
@@ -126,7 +126,7 @@ export const Footer = () => {
       <div className="border-t border-border">
         <div className="container-padding max-w-7xl mx-auto py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm text-center md:text-left">
-            © {new Date().getFullYear()} সাতোতা ইলেকট্রিক্যাল ভেহিকল সলিউশন। সর্বস্বত্ব সংরক্ষিত। 🇧🇩
+            © {new Date().getFullYear()} Satota Electrical Vehicle Solution. All rights reserved.
           </p>
           
           {/* Back to Top */}
@@ -134,7 +134,7 @@ export const Footer = () => {
             onClick={scrollToTop}
             className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
           >
-            <span className="text-sm">উপরে যান</span>
+            <span className="text-sm">Back to top</span>
             <ArrowUp className="w-4 h-4" />
           </button>
         </div>

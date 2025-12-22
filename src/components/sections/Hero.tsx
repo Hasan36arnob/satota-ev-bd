@@ -32,7 +32,7 @@ export const Hero = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm mb-8"
           >
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-muted-foreground">বাংলাদেশের #১ ইভি চার্জিং নেটওয়ার্ক</span>
+            <span className="text-muted-foreground">Bangladesh's #1 EV Charging Network</span>
           </motion.div>
 
           {/* Main Heading */}
@@ -42,11 +42,10 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6"
           >
-            <span className="text-foreground">সবুজ বাংলাদেশ </span>
+            <span className="text-foreground">Powering </span>
+            <span className="text-gradient">Bangladesh's</span>
             <br />
-            <span className="text-gradient">Electric Future</span>
-            <br />
-            <span className="text-foreground text-3xl md:text-4xl lg:text-5xl">গড়ি সাতোতার সাথে</span>
+            <span className="text-foreground">Electric Future</span>
           </motion.h1>
 
           {/* Description */}
@@ -56,7 +55,7 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl"
           >
-            Satota Electrical Vehicle Solution - ঢাকা থেকে চট্টগ্রাম, সিলেট থেকে কক্সবাজার। সারাদেশে দ্রুত, নিরাপদ ও সাশ্রয়ী ইভি চার্জিং সেবা।
+            Satota Electrical Vehicle Solution is your trusted partner for reliable EV charging stations across Bangladesh. Fast, safe, and accessible charging for everyone.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -87,8 +86,8 @@ export const Hero = () => {
                 <Zap className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <p className="text-2xl md:text-3xl font-bold text-foreground">৫০+</p>
-                <p className="text-sm text-muted-foreground">চার্জিং স্টেশন</p>
+                <p className="text-2xl md:text-3xl font-bold text-foreground">50+</p>
+                <p className="text-sm text-muted-foreground">Charging Stations</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -96,8 +95,8 @@ export const Hero = () => {
                 <MapPin className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <p className="text-2xl md:text-3xl font-bold text-foreground">৮ বিভাগ</p>
-                <p className="text-sm text-muted-foreground">সারা বাংলাদেশে</p>
+                <p className="text-2xl md:text-3xl font-bold text-foreground">10+</p>
+                <p className="text-sm text-muted-foreground">Cities Covered</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -105,8 +104,8 @@ export const Hero = () => {
                 <Shield className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <p className="text-2xl md:text-3xl font-bold text-foreground">৫০০০+</p>
-                <p className="text-sm text-muted-foreground">সন্তুষ্ট গ্রাহক</p>
+                <p className="text-2xl md:text-3xl font-bold text-foreground">5k+</p>
+                <p className="text-sm text-muted-foreground">Happy Customers</p>
               </div>
             </div>
           </motion.div>
