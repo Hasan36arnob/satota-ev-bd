@@ -8,23 +8,23 @@ import { useToast } from '@/hooks/use-toast';
 const contactInfo = [
   {
     icon: MapPin,
-    title: 'Visit Us',
-    details: ['House 123, Road 456', 'Gulshan, Dhaka 1212', 'Bangladesh'],
+    title: 'অফিসের ঠিকানা',
+    details: ['বাড়ি ১২৩, রোড ৪৫৬', 'গুলশান-২, ঢাকা ১২১২', 'বাংলাদেশ'],
   },
   {
     icon: Phone,
-    title: 'Call Us',
-    details: ['+880 1700-000000', '+880 1800-000000'],
+    title: 'ফোন করুন',
+    details: ['+৮৮০ ১৭০০-০০০০০০', '+৮৮০ ১৮০০-০০০০০০'],
   },
   {
     icon: Mail,
-    title: 'Email Us',
+    title: 'ইমেইল করুন',
     details: ['info@satota.com.bd', 'support@satota.com.bd'],
   },
   {
     icon: Clock,
-    title: 'Working Hours',
-    details: ['Saturday - Thursday', '9:00 AM - 6:00 PM'],
+    title: 'অফিস সময়',
+    details: ['শনিবার - বৃহস্পতিবার', 'সকাল ৯টা - সন্ধ্যা ৬টা'],
   },
 ];
 
@@ -66,12 +66,12 @@ export const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">Contact Us</span>
+          <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">যোগাযোগ</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Get In <span className="text-gradient">Touch</span>
+            আমাদের সাথে <span className="text-gradient">যোগাযোগ করুন</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Have questions about our EV charging solutions? We're here to help. Reach out to us today.
+            ইভি চার্জিং বা চার্জার স্থাপন সম্পর্কে জানতে চান? আজই যোগাযোগ করুন। bKash/Nagad পেমেন্ট গ্রহণযোগ্য।
           </p>
         </motion.div>
 
@@ -111,24 +111,24 @@ export const Contact = () => {
             <form onSubmit={handleSubmit} className="p-8 rounded-2xl bg-gradient-card border border-border">
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Your Name</label>
+                  <label className="block text-sm font-medium text-foreground mb-2">আপনার নাম</label>
                   <input
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder:text-muted-foreground transition-colors"
-                    placeholder="John Doe"
+                    placeholder="মোঃ করিম"
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Email Address</label>
+                  <label className="block text-sm font-medium text-foreground mb-2">ইমেইল ঠিকানা</label>
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder:text-muted-foreground transition-colors"
-                    placeholder="john@example.com"
+                    placeholder="karim@example.com"
                     required
                   />
                 </div>
@@ -136,42 +136,42 @@ export const Contact = () => {
 
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
+                  <label className="block text-sm font-medium text-foreground mb-2">মোবাইল নম্বর</label>
                   <input
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder:text-muted-foreground transition-colors"
-                    placeholder="+880 1700-000000"
+                    placeholder="০১৭০০-০০০০০০"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Subject</label>
+                  <label className="block text-sm font-medium text-foreground mb-2">বিষয়</label>
                   <input
                     type="text"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder:text-muted-foreground transition-colors"
-                    placeholder="EV Charging Inquiry"
+                    placeholder="ইভি চার্জিং সম্পর্কে জানতে চাই"
                     required
                   />
                 </div>
               </div>
 
               <div className="mb-6">
-                <label className="block text-sm font-medium text-foreground mb-2">Your Message</label>
+                <label className="block text-sm font-medium text-foreground mb-2">আপনার বার্তা</label>
                 <textarea
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder:text-muted-foreground transition-colors resize-none"
-                  placeholder="Tell us about your EV charging needs..."
+                  placeholder="আপনার ইভি চার্জিং প্রয়োজন সম্পর্কে বলুন..."
                   required
                 />
               </div>
 
               <Button type="submit" variant="hero" size="lg" className="w-full">
-                Send Message
+                বার্তা পাঠান
                 <Send className="w-5 h-5" />
               </Button>
             </form>

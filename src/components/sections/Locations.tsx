@@ -4,12 +4,14 @@ import { useRef } from 'react';
 import { MapPin, ArrowRight } from 'lucide-react';
 
 const locations = [
-  { city: 'Dhaka', stations: 25, status: 'active' },
-  { city: 'Chittagong', stations: 8, status: 'active' },
-  { city: 'Narayanganj', stations: 5, status: 'active' },
-  { city: 'Comilla', stations: 4, status: 'active' },
-  { city: 'Sylhet', stations: 4, status: 'active' },
-  { city: "Cox's Bazar", stations: 4, status: 'coming' },
+  { city: 'ঢাকা বিভাগ', stations: 25, status: 'active', areas: 'গুলশান, বনানী, ধানমন্ডি, উত্তরা' },
+  { city: 'চট্টগ্রাম বিভাগ', stations: 12, status: 'active', areas: 'জিইসি, নাসিরাবাদ, হালিশহর' },
+  { city: 'সিলেট বিভাগ', stations: 6, status: 'active', areas: 'জিন্দাবাজার, আম্বরখানা' },
+  { city: 'রাজশাহী বিভাগ', stations: 4, status: 'active', areas: 'সাহেব বাজার, নিউ মার্কেট' },
+  { city: 'খুলনা বিভাগ', stations: 3, status: 'active', areas: 'বয়রা, দৌলতপুর' },
+  { city: 'কক্সবাজার', stations: 4, status: 'coming', areas: 'কলাতলী, ইনানী বিচ' },
+  { city: 'রংপুর বিভাগ', stations: 2, status: 'coming', areas: 'শাপলা চত্বর' },
+  { city: 'বরিশাল বিভাগ', stations: 2, status: 'coming', areas: 'সদর রোড' },
 ];
 
 export const Locations = () => {
@@ -32,12 +34,12 @@ export const Locations = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">EV Charging Points</span>
+          <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">চার্জিং পয়েন্ট</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Locations of Our <span className="text-gradient">EV Charging Stations</span>
+            ৮ বিভাগে আমাদের <span className="text-gradient">চার্জিং স্টেশন</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Our strategically located charging stations ensure convenient, reliable, and accessible charging for every EV user nationwide.
+            পদ্মা সেতু পার হয়ে দক্ষিণবঙ্গে, বঙ্গবন্ধু সেতু পার হয়ে উত্তরবঙ্গে - সর্বত্র সাতোতার চার্জিং নেটওয়ার্ক।
           </p>
         </motion.div>
 
@@ -62,7 +64,7 @@ export const Locations = () => {
                         {location.city}
                       </h3>
                       <p className="text-sm text-muted-foreground">
-                        {location.stations} Stations
+                        {location.stations}টি স্টেশন
                       </p>
                     </div>
                   </div>
@@ -71,12 +73,14 @@ export const Locations = () => {
                       ? 'bg-primary/20 text-primary' 
                       : 'bg-accent/20 text-accent'
                   }`}>
-                    {location.status === 'active' ? 'Active' : 'Coming Soon'}
+                    {location.status === 'active' ? 'সক্রিয়' : 'শীঘ্রই আসছে'}
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <span className="text-sm text-muted-foreground">View all stations</span>
+                <p className="text-xs text-muted-foreground mt-2">{location.areas}</p>
+                
+                <div className="flex items-center justify-between pt-4 border-t border-border mt-4">
+                  <span className="text-sm text-muted-foreground">সব স্টেশন দেখুন</span>
                   <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -92,10 +96,10 @@ export const Locations = () => {
           className="grid grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {[
-            { value: '50+', label: 'Charging Stations' },
-            { value: '5k+', label: 'Clients Served' },
-            { value: '10+', label: 'Cities Served' },
-            { value: '40%', label: 'Cost Saved' },
+            { value: '৫০+', label: 'চার্জিং স্টেশন' },
+            { value: '৫০০০+', label: 'সন্তুষ্ট গ্রাহক' },
+            { value: '৮', label: 'বিভাগে সেবা' },
+            { value: '৪০%', label: 'খরচ সাশ্রয়' },
           ].map((stat, index) => (
             <div
               key={stat.label}
