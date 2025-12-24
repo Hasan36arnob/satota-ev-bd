@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Zap, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ModeToggle } from '@/components/ui/mode-toggle';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -9,6 +10,7 @@ const navLinks = [
   { name: 'Services', href: '#services' },
   { name: 'Products', href: '#products' },
   { name: 'Locations', href: '#locations' },
+  { name: 'Our Policy', href: '#policy' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -30,13 +32,13 @@ export const Header = () => {
       <div className="hidden md:block bg-primary/10 border-b border-border/50">
         <div className="container-padding max-w-7xl mx-auto flex justify-between items-center py-2 text-sm">
           <div className="flex items-center gap-6">
-            <a href="mailto:info@satota.com.bd" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+            <a href="mailto:SATOTABD.ENG@GMAIL.COM" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
               <Mail size={14} />
-              info@satota.com.bd
+              SATOTABD.ENG@GMAIL.COM
             </a>
-            <a href="tel:+8801700000000" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+            <a href="tel:+8801777608011" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
               <Phone size={14} />
-              +880 1700-000000
+              +8801777608011
             </a>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
@@ -84,8 +86,9 @@ export const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button variant="hero" size="lg">
-              Get Started
+            <ModeToggle />
+            <Button variant="hero" size="lg" asChild>
+              <a href="#contact">Get Started</a>
             </Button>
           </div>
 
@@ -108,6 +111,9 @@ export const Header = () => {
               className="lg:hidden glass border-t border-border/50 overflow-hidden"
             >
               <div className="container-padding py-6 flex flex-col gap-4">
+                <div className="flex justify-center mb-4">
+                  <ModeToggle />
+                </div>
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
@@ -118,8 +124,8 @@ export const Header = () => {
                     {link.name}
                   </a>
                 ))}
-                <Button variant="hero" size="lg" className="mt-4">
-                  Get Started
+                <Button variant="hero" size="lg" className="mt-4" asChild>
+                  <a href="#contact" onClick={() => setIsOpen(false)}>Get Started</a>
                 </Button>
               </div>
             </motion.div>

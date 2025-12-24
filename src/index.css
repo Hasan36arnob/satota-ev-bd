@@ -6,6 +6,59 @@
 
 @layer base {
   :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 0 84% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 350 84% 45%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 0 84% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(0 84% 50%) 0%, hsl(350 84% 45%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 98%) 0%, hsl(210 40% 96%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(0 84% 50% / 0.15) 0%, transparent 70%);
+
+    --shadow-glow: 0 0 40px hsl(0 84% 50% / 0.3);
+    --shadow-glow-sm: 0 0 20px hsl(0 84% 50% / 0.2);
+    --shadow-card: 0 10px 40px -10px hsl(222 47% 11% / 0.1);
+
+    --font-display: 'Outfit', sans-serif;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 0 84% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 0 84% 50%;
+  }
+
+  .dark {
     --background: 222 47% 6%;
     --foreground: 0 0% 98%;
 
@@ -34,19 +87,15 @@
     --input: 222 30% 18%;
     --ring: 0 84% 50%;
 
-    --radius: 0.75rem;
-
     /* Custom tokens */
     --gradient-primary: linear-gradient(135deg, hsl(0 84% 50%) 0%, hsl(350 84% 45%) 100%);
     --gradient-dark: linear-gradient(180deg, hsl(222 47% 6%) 0%, hsl(222 47% 3%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(222 47% 10%) 0%, hsl(222 47% 6%) 100%);
     --gradient-glow: radial-gradient(circle at center, hsl(0 84% 50% / 0.15) 0%, transparent 70%);
-    
+
     --shadow-glow: 0 0 40px hsl(0 84% 50% / 0.3);
     --shadow-glow-sm: 0 0 20px hsl(0 84% 50% / 0.2);
     --shadow-card: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
-    
-    --font-display: 'Outfit', sans-serif;
 
     --sidebar-background: 222 47% 8%;
     --sidebar-foreground: 0 0% 98%;
@@ -56,28 +105,6 @@
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 222 30% 18%;
     --sidebar-ring: 0 84% 50%;
-  }
-
-  .dark {
-    --background: 222 47% 6%;
-    --foreground: 0 0% 98%;
-    --card: 222 47% 8%;
-    --card-foreground: 0 0% 98%;
-    --popover: 222 47% 8%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 84% 50%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 60% 25%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 222 30% 15%;
-    --muted-foreground: 220 10% 60%;
-    --accent: 350 84% 45%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 30 84% 50%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 222 30% 18%;
-    --input: 222 30% 18%;
-    --ring: 0 84% 50%;
   }
 }
 

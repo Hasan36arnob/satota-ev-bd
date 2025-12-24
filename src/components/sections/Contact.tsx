@@ -1,54 +1,42 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
-import { MapPin, Phone, Mail, Send, Clock } from 'lucide-react';
+import { useRef } from 'react';
+import { MapPin, Phone, Mail, Send, Clock, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useToast } from '@/hooks/use-toast';
+import { useForm, ValidationError } from '@formspree/react';
 
 const contactInfo = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    details: ['House 123, Road 456', 'Gulshan, Dhaka 1212', 'Bangladesh'],
+    details: ['12, Ranking Street, Wari', 'Dhaka 1203', 'Bangladesh'],
   },
   {
     icon: Phone,
     title: 'Call Us',
-    details: ['+880 1700-000000', '+880 1800-000000'],
+    details: ['+8801777608011'],
   },
   {
     icon: Mail,
     title: 'Email Us',
-    details: ['info@satota.com.bd', 'support@satota.com.bd'],
+    details: ['SATOTABD.ENG@GMAIL.COM'],
+  },
+  {
+    icon: Globe,
+    title: 'Website',
+    details: ['SATOTAENGINEERING.COM'],
   },
   {
     icon: Clock,
     title: 'Working Hours',
-    details: ['Saturday - Thursday', '9:00 AM - 6:00 PM'],
+    details: ['24/7, 365 days a year', 'Emergency call outs available'],
   },
 ];
 
 export const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { toast } = useToast();
-  
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
-    });
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-  };
+  const [state, handleSubmit] = useForm("mwvewgwb");
 
   return (
     <section id="contact" className="section-padding bg-gradient-dark relative overflow-hidden">
@@ -108,73 +96,52 @@ export const Contact = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="lg:col-span-3"
           >
-            <form onSubmit={handleSubmit} className="p-8 rounded-2xl bg-gradient-card border border-border">
-              <div className="grid sm:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Your Name</label>
+            {state.succeeded ? (
+              <div className="p-8 rounded-2xl bg-gradient-card border border-border text-center">
+                <p className="text-foreground text-lg">Thanks for joining!</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="p-8 rounded-2xl bg-gradient-card border border-border">
+                <div className="mb-6">
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">Email Address</label>
                   <input
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder:text-muted-foreground transition-colors"
-                    placeholder="John Doe"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Email Address</label>
-                  <input
+                    id="email"
                     type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    name="email"
                     className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder:text-muted-foreground transition-colors"
                     placeholder="john@example.com"
                     required
                   />
-                </div>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
-                  <input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder:text-muted-foreground transition-colors"
-                    placeholder="+880 1700-000000"
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Subject</label>
-                  <input
-                    type="text"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder:text-muted-foreground transition-colors"
-                    placeholder="EV Charging Inquiry"
+
+                <div className="mb-6">
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">Your Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder:text-muted-foreground transition-colors resize-none"
+                    placeholder="Tell us about your EV charging needs..."
                     required
                   />
+                  <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                  />
                 </div>
-              </div>
 
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-foreground mb-2">Your Message</label>
-                <textarea
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder:text-muted-foreground transition-colors resize-none"
-                  placeholder="Tell us about your EV charging needs..."
-                  required
-                />
-              </div>
-
-              <Button type="submit" variant="hero" size="lg" className="w-full">
-                Send Message
-                <Send className="w-5 h-5" />
-              </Button>
-            </form>
+                <Button type="submit" variant="hero" size="lg" className="w-full" disabled={state.submitting}>
+                  Send Message
+                  <Send className="w-5 h-5" />
+                </Button>
+              </form>
+            )}
           </motion.div>
         </div>
       </div>
